@@ -1,0 +1,48 @@
+---
+import NavbarItem from "./NavbarItem.astro";
+const navItems = ["Home", "New", "Popular", "Trending", "Categories"];
+---
+
+<header class="w-full flex items-center justify-between">
+  <img src="/icons/logo.svg" alt="logo of news webpage" class="h-8" />
+
+  <div class="md:hidden">
+    <img
+      id="open"
+      src="/icons/icon-menu.svg"
+      alt="menu"
+      class="h-8 cursor-pointer"
+    />
+  </div>
+
+  <ul
+    id="menu"
+    class="fixed top-0 right-0 bg-white w-[60%] h-screen pt-32 pl-6 transform transition-transform duration-300 translate-x-full md:relative md:flex md:translate-x-0 md:w-auto md:h-auto md:p-0 md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12"
+  >
+    <div class="absolute top-10 right-10 md:hidden">
+      <img
+        id="close"
+        src="/icons/icon-menu-close.svg"
+        alt="menu close"
+        class="h-8 cursor-pointer"
+      />
+    </div>
+    {navItems.map((item) => <NavbarItem title={item} />)}
+  </ul>
+</header>
+
+<script>
+  const openMenu = document.getElementById("open");
+  const closeMenu = document.getElementById("close");
+  const menu = document.getElementById("menu");
+
+  openMenu.addEventListener("click", () => {
+    menu.classList.remove("translate-x-full");
+    menu.classList.add("translate-x-0");
+  });
+
+  closeMenu.addEventListener("click", () => {
+    menu.classList.remove("translate-x-0");
+    menu.classList.add("translate-x-full");
+  });
+</script>
