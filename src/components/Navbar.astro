@@ -11,9 +11,11 @@ const navItems = ["Home", "New", "Popular", "Trending", "Categories"];
       id="open"
       src="/icons/icon-menu.svg"
       alt="menu"
-      class="h-8 cursor-pointer"
+      class="h-4 md:h-8 cursor-pointer"
     />
   </div>
+
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden"></div>
 
   <ul
     id="menu"
@@ -35,14 +37,23 @@ const navItems = ["Home", "New", "Popular", "Trending", "Categories"];
   const openMenu = document.getElementById("open");
   const closeMenu = document.getElementById("close");
   const menu = document.getElementById("menu");
+  const overlay = document.getElementById("overlay");
 
   openMenu.addEventListener("click", () => {
     menu.classList.remove("translate-x-full");
     menu.classList.add("translate-x-0");
+    overlay.classList.remove("hidden");
   });
 
   closeMenu.addEventListener("click", () => {
     menu.classList.remove("translate-x-0");
     menu.classList.add("translate-x-full");
+    overlay.classList.add("hidden");
+  });
+
+  overlay.addEventListener("click", () => {
+    menu.classList.remove("translate-x-0");
+    menu.classList.add("translate-x-full");
+    overlay.classList.add("hidden");
   });
 </script>

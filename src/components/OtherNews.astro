@@ -1,0 +1,41 @@
+---
+import NewItem from "./NewItem.astro";
+
+const otherNews = [
+  {
+    id: 1,
+    title: "Reviving Retro PCs",
+    text: "What happens when old PCs are given modern upgrades?",
+    image: "/images/image-retro-pcs.jpg",
+  },
+  {
+    id: 2,
+    title: "Top 10 Laptops of 2022",
+    text: "Our best picks for various need and budgets.",
+    image: "/images/image-top-laptops.jpg",
+  },
+  {
+    id: 3,
+    title: "The Growth of Gaming",
+    text: "How the pandemic has sparked fresh opportunities.",
+    image: "/images/image-gaming-growth.jpg",
+  },
+];
+---
+
+<section class="col-span-1 md:col-span-3 md:row-span-1">
+  <div
+    class="mt-4 w-full flex flex-col md:flex-row items-center justify-between gap-10"
+  >
+    {
+      otherNews.map((item) => (
+        <NewItem
+          title={item.title}
+          text={item.text}
+          image={item.image}
+          id={item.id}
+        />
+      ))
+    }
+  </div>
+</section>

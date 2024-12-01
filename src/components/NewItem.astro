@@ -1,0 +1,31 @@
+---
+interface Props {
+  id?: string | number;
+  image: string;
+  title: string;
+  text: string;
+}
+
+const { id, image, title, text } = Astro.props;
+---
+
+<article class="w-full flex items-center md:items-start p-2">
+  <img
+    class="w-full max-w-[100px] h-full md:max-w-[120px] object-cover"
+    src={image}
+    alt={title}
+  />
+  <section class="mx-4">
+    <h2 class="font-bold text-4xl text-primary-soft-red">
+      0{id}
+    </h2>
+    <h3
+      class="font-bold text-xl mt-2 cursor-pointer transition-colors hover:text-primary-soft-red"
+    >
+      {title}
+    </h3>
+    <p class="mt-2 text-neutral-dark-grayish-blue text-lg">
+      {text}
+    </p>
+  </section>
+</article>
