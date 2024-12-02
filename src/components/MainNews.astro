@@ -1,9 +1,9 @@
 ---
-
+import AsideNews from "./AsideNews.astro";
 ---
 
-<section class="flex gap-10 md:col-span-3 md:row-span-2">
-  <section class="flex flex-col md:w-[70%] h-full">
+<section class="flex md:gap-10 md:col-span-3 md:row-span-2">
+  <section class="flex flex-col w-full md:w-[70%] h-full">
     <picture>
       <source
         media="(min-width: 480px)"
@@ -12,11 +12,15 @@
       <img src="/images/image-web-3-mobile.jpg" alt="main image" />
     </picture>
 
-    <section class="flex justify-between w-full p-8">
-      <h1 class="w-[40%] font-bold text-5xl leading-[48px]">
+    <section
+      class="flex flex-col md:flex-row justify-between w-full p-4 md:p-8"
+    >
+      <h1
+        class="w-full md:w-[40%] font-bold text-5xl leading-[48px] my-4 md:my-0"
+      >
         The Bright Future of Web 3.0?
       </h1>
-      <div class="w-[40%]">
+      <div class="w-full md:w-[40%]">
         <p class="text-neutral-dark-grayish-blue leading-7 font-semibold">
           We dive into the next evolution of the web that claims to put the
           power of the platforms back into the hands of the people. But is it
@@ -30,5 +34,5 @@
     </section>
   </section>
 
-  <section class="md:w-[30%] h-full bg-blue-200"></section>
+  <AsideNews />
 </section>
