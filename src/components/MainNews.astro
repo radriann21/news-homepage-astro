@@ -3,7 +3,13 @@ import AsideNews from "./AsideNews.astro";
 import MainNewsComponent from "./MainNewsComponent.astro";
 ---
 
-<section class="flex md:gap-10 md:col-span-3 md:row-span-2">
-  <MainNewsComponent />
-  <AsideNews />
+<section
+  class="grid grid-cols-1 md:grid-cols-3 gap-8 md:col-span-3 md:row-span-2"
+>
+  <div class="md:col-span-2">
+    <MainNewsComponent />
+  </div>
+  <div class="md:col-span-1">
+    <AsideNews />
+  </div>
 </section>
